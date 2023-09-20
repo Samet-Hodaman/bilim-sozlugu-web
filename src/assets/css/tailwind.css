@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.temples {
+    background: linear-gradient(to bottom, rgb(183, 39, 39), rgba(110, 250, 17, 0));
+}
+
+body {
+    @apply bg-stone-200;
+    background: url()
+}
+
+h2 {
+    @apply text-xl;
+}
+
+.active {
+    @apply font-bold;
+}
+

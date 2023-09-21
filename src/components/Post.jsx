@@ -1,22 +1,26 @@
-import { CSSTransition } from 'react-transition-group'
-export default function Post({show}){
+import classNames from "classnames"
+
+export default function Post(props){
+    const {category,img,title,content} = props.data
     return (
-        <article className="flex flex-col m-7 bg-rose-300 bg-opacity-100 cursor-pointer rounded shadow-2xl scroll-smooth rev ">
-            <div className="ml-7 my-2">
-                Tür buraya
+        <article className="duration-300 m-3 p-5 md:px-7 h-fit w-auto bg-white bg-opacity-5 hover:bg-opacity-30 hover:-mt-1 hover:mb-2 hover:shadow-lg cursor-pointer rounded-xl shadow-lg ">
+            <div className={classNames("ml-7 my-2 px-1 font-bold text-lg inline-flex rounded-lg shadow-sm ",
+            {'text-green-500': category === 'BİYOLOJİ'},
+            {'text-blue-500': category === 'FİZİK'},
+            {'text-red-500': category === 'KİMYA'},
+            )}>
+                {category}
             </div>
-            <div className="bg-white h-80 mx-7">
-                Resim Buraya
+            <div className="bg-white h-auto overflow-hidden rounded-2xl">
+                <img src={`img/dummy-posts/${img}`} alt={title} />
             </div>
-            <div className="ml-7 my-2 font-bold">
-                Baslık buraya
+            <div className=" my-2 font-bold">
+                {title}
             </div>
-            <div className="ml-7 my-2 mb-5">
-                Kisa yazi buraya - Kisa yazi buraya - Kisa yazi buraya - Kisa yazi buraya - Kisa yazi buraya - Kisa yazi buraya - Kisa yazi buraya -
-                Kisa yazi buraya - Kisa yazi buraya - Kisa yazi buraya - Kisa yazi buraya - Kisa yazi buraya - Kisa yazi buraya - Kisa yazi buraya -
-                Kisa yazi buraya - Kisa yazi buraya - Kisa yazi buraya - Kisa yazi buraya - Kisa yazi buraya - Kisa yazi buraya - Kisa yazi buraya - 
+            <div className="indent-5 line-clamp-5 my-2 text-sm sm:text-base mb-5">
+                {content}
+            </div>
                 <a className="underline ml-1">Devamı...</a>
-            </div>
         </article>
     )
 }

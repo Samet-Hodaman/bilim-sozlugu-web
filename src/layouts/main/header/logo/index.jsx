@@ -1,5 +1,5 @@
-import logo from '../../../../assets/img/Ana Logo.png'
 export default function Logo({text}){
+    const logo = "img/Ana Logo.png"
     return (
     <div className='flex items-center m-2'>
         <img src={logo} alt={text} className='w-12 sm:w-16 md:w-20 lg:w-20 m-2 '/>

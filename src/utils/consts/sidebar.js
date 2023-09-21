@@ -1,32 +1,48 @@
+import HomeIcon from '@mui/icons-material/Home';
+import CategoryIcon from '@mui/icons-material/Category';
+import InfoIcon from '@mui/icons-material/Info';
+import PersonIcon from '@mui/icons-material/Person';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import ContactSupportIcon from '@mui/icons-material/ContactSupport';
+import LogoutIcon from '@mui/icons-material/Logout';
+const fontSize = 'small'
+
 export const SIDEBAR_MENU = [
     {
         path: '/',
-        title: 'Anasayfa'
+        title: 'Anasayfa',
+        element: <HomeIcon fontSize={fontSize} />
     },
     {
         path: '/kategoriler',
-        title: 'Kategoriler'
+        title: 'Kategoriler',
+        element: <CategoryIcon fontSize={fontSize} />
     },
     {
         path: '/hakkimizda',
-        title: 'Hakkımızda'
+        title: 'Hakkımızda',
+        element: <InfoIcon fontSize={fontSize} />
     },
     {
         path: '/profil',
         title: 'Profil',
+        element: <PersonIcon fontSize={fontSize} />,
         isLogged: true
     },
     {
         path: '/iletisim',
-        title: 'İletişim'
+        title: 'İletişim',
+        element: <AlternateEmailIcon fontSize={fontSize} />
     },
     {
         path: '/oneri-istek',
-        title: 'Öneri-İstek'
+        title: 'Öneri-İstek',
+        element: <ContactSupportIcon fontSize={fontSize} />
     },
     {
         path: '/auth/giris-yap',
         title: 'Giris yap',
+        element: <LogoutIcon fontSize={fontSize} />,
         isLogged: false
     },
 ]

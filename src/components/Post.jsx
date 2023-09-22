@@ -3,7 +3,7 @@ import classNames from "classnames"
 export default function Post(props){
     const {category,img,title,content} = props.data
     return (
-        <article className="duration-300 m-3 p-5 md:px-7 h-fit w-auto bg-white bg-opacity-5 hover:bg-opacity-30 hover:-mt-1 hover:mb-2 hover:shadow-lg cursor-pointer rounded-xl shadow-lg ">
+        <article className="duration-300 p-2.5 sm:p-5 h-fit w-auto bg-white bg-opacity-5 cursor-pointer rounded-xl shadow-lg hover:bg-opacity-30 hover:-mt-1 hover:mb-2 hover:shadow-lg ">
             <div className={classNames("ml-7 my-2 px-1 font-bold text-lg inline-flex rounded-lg shadow-sm ",
             {'text-green-500': category === 'BİYOLOJİ'},
             {'text-blue-500': category === 'FİZİK'},

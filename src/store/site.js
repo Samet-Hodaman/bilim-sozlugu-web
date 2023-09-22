@@ -3,11 +3,12 @@ import { createSlice } from "@reduxjs/toolkit"
 export const site = createSlice({
     name: 'site',
     initialState: {
-        navbar: true
+        navbar: false
     },
     reducers: {
         setNavbar: (state,action) => {
             state.navbar = action.payload
+            localStorage.setItem('nav',state.navbar)
         }
     }
 })

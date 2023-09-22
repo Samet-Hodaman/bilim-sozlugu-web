@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Mooli&family=Playfair+Display&family=Roboto:ital,wght@0,400;1,500&display=swap');
 
 .temples {
     background: linear-gradient(to bottom, #fbcfe86b, rgba(110, 250, 17, 0));
@@ -12,11 +12,29 @@ body {
     background: url()
 }
 
+.primary{
+    color:#818cf8;
+}
+
 h2 {
     @apply text-xl;
 }
 
 .active {
-    @apply font-bold;
+    @apply font-semibold text-sky-500 shadow-sky-800/20;
+    
 }
 
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.mooli {
+    font-family: 'Mooli', sans-serif;
+}
+.playfair {
+    font-family: 'Playfair Display', serif;
+}
+.roboto {
+    font-family: 'Roboto', sans-serif;
+}

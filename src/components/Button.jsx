@@ -1,11 +1,13 @@
-export default function Button(props) {
+import { Button } from "@mui/material"
+export default function Buttons(props) {
     return (
-        <button
+        <Button
         name={props.name}
         type={props.type}
         onClick={props.onClick}
-        className="p-2 px-2 md:px-4 md:p-2.5 bg-blue-500 rounded-xl text-white text-sm md:text-base ">
+        variant="contained"
+        >
             {props.children}
-        </button>
+        </Button>
     )
 }

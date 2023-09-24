@@ -17,6 +17,7 @@ export default function SideBar() {
     const navbar = useSelector(state => state.site.navbar)
     const [isDrawerOpen, setIsDrawerOpen] = useState(false)
     
+    {/* Understanding if it is a mobile device and according to it, deciding between navbar and drawler  */}
     const [isMobileWidth, setIsMobileWidth] = useState(true)
     useEffect(() => {
         const handleResize = () => {
@@ -29,12 +30,11 @@ export default function SideBar() {
         }
     }, [])
 
+    {/* If mobile width is changed, navbar will be closed automatically. */}
     useEffect(() => {
         const handleNavbar = () => {
-            console.log(`Before:\nnavbar ${navbar}\ndrawer ${isDrawerOpen}`);
             dispatch(setNavbar(false))
-            setIsDrawerOpen(false)
-            console.log(`navbar ${navbar}\ndrawer ${isDrawerOpen}`);
+            setIsDrawerOpen(true) /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
         }
         handleNavbar()
     }, [isMobileWidth])
@@ -57,10 +57,10 @@ export default function SideBar() {
 
 
     
-    return <>
-    <aside className={classNames("flex sticky z-10 duration-300 absolute rounded-l-lg w-60 ml-3 pt-1 top-0 bg-blue-500 bg-opacity-30 h-[100vh] ", 
+    return <aside className={classNames("flex sticky z-10 duration-300 absolute rounded-l-lg w-60 ml-3 pt-1 top-0 bg-blue-500 bg-opacity-30 h-[100vh] ", 
     {' !w-0 bg-transparent ' : !navbar})}>
     
+    {/* This Part is for desktop devices */}
     <div className="pl-0.5 sm:pl-2 duration-400 w-auto sm:w-72 ">
     {navbar && 
         <nav className="grid gap-y-2 ml-1.5 sm:ml-2 mt-3">
@@ -88,21 +88,31 @@ export default function SideBar() {
                 Çıkış yap
             </button>
         </> }
-        </nav>}
+        <div className="text-sm md:text-base">
+        {isLogged ? 
+                <button onClick={() => dispatch(logout())}>Burasi cikis yap</button>
+        :
+                <button onClick={() => dispatch(login(JSON.stringify(person)))}>Burasi giris yap</button>
+        }
+        </div>
+        </nav>
+        
+        }
     </div>
     <div 
         className="flex rounded-full cursor-pointer p-2 justify-center items-center m-1 w-8 h-8 opacity-80 bg-zinc-200 hover:bg-zinc-100 hover:opacity-100 " onClick={handleClick}>
         {navbar ? <ArrowBackIcon /> : <DehazeRoundedIcon />}
     </div>
 
+    {/* This Part is for mobile devices */}
     <Drawer
         anchor='left'
         open={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
         onKeyDown={() => setIsDrawerOpen(false)}
         >
-        <Box p={2} width='250px' textAlign='center' role='presentation'>
-            <Typography variant='h6' component='div'>
+        <Box p={2} width='250px' textAlign='left' role='presentation'>
+            <Typography variant='h6' component='div' textAlign='center'>
                 Menü
             </Typography>
             <List>
@@ -110,20 +120,20 @@ export default function SideBar() {
             {SIDEBAR_MENU.map((menu,key) => {
                 if (menu.isLogged === isLogged || menu.isLogged === undefined) 
                 return(
-                    <NavLink 
-                        to={menu.path}
-                        key={key}
-                        className='flex shadow-md gap-x-1 tracking-wider bg-zinc-100 px-1.5 py-0.5 text-xs sm:px-3 sm:py-1 rounded-lg max-w-[15rem] text-lg hover:bg-zinc-50 hover:shadow-sky-200/10 '
+                <NavLink 
+                    to={menu.path}
+                    key={key}
+                    className='flex shadow-md pl-2 py-0.5 tracking-wider bg-zinc-200 my-1.5 rounded-lg hover:shadow-sky-200/10 '
                     >
-                <ListItem>
-                    <ListItemIcon>
-                        <NavLink to={menu.path}>
-                            {menu.element}
-                        </NavLink>
-                    </ListItemIcon>
-                    <ListItemText primary={menu.title} />
-                </ListItem>
-                    </NavLink>
+                    <ListItem disablePadding>
+                        <ListItemIcon>
+                            <NavLink to={menu.path}>
+                                {menu.element}
+                            </NavLink>
+                        </ListItemIcon>
+                        <ListItemText primary={menu.title} />
+                    </ListItem>
+                </NavLink>
                 )
             })}
             {/* ************************************************************* */}
@@ -131,7 +141,6 @@ export default function SideBar() {
         </Box>
     </Drawer>
     </aside>
-    </>
 
 
 

@@ -3,6 +3,13 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Mooli&family=Playfair+Display&family=Roboto:ital,wght@0,400;1,500&display=swap');
 
+:root {
+    --first: #213D83ec;
+    --second: #6e98ba;
+    --third: #a6c4e0;
+    --forth: #c5d7ed;
+    --fifth: #eaf1f7;
+}
 .bg-header {
     background: linear-gradient(to bottom, #fbcfe86b, rgba(110, 250, 17, 0));
 }
@@ -10,10 +17,6 @@
 body {
     @apply bg-stone-200;
     background: url()
-}
-
-.primary{
-    color:#818cf8;
 }
 
 h2 {
@@ -37,4 +40,41 @@ h2 {
 }
 .roboto {
     font-family: 'Roboto', sans-serif;
+}
+
+.primary{
+    color: var(--first);
+}
+
+.bg-primary{
+    background-color: var(--first);
+}
+.secondary{
+    color: var(--second);
+}
+
+.bg-secondary{
+    background-color:var(--second);
+}
+
+.third{
+    color: var(--third);
+}
+
+.bg-third{
+    background-color: var(--third);
+}
+.forth{
+    color: var(--forth);
+}
+
+.bg-forth{
+    background-color: var(--forth);
+}
+.fifth{
+    color: var(--fifth);
+}
+
+.bg-fifth{
+    background-color: var(--fifth);
 }

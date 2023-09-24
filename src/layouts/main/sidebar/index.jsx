@@ -8,14 +8,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { setNavbar } from "../../../store/site";
 import { login,logout} from "../../../store/auth";
 import { useEffect, useState } from "react";
-import { Box, Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
-
+import { Box, Divider, Drawer, IconButton, AlertProps, List, ListItem, ListItemIcon, ListItemText, Snackbar, Typography, Alert } from "@mui/material";
 
 export default function SideBar() {
     const dispatch = useDispatch()
     const isLogged = useSelector(state => state.auth.isLogged)
     const navbar = useSelector(state => state.site.navbar)
     const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+    const [isSnackOpen, setIsSnackOpen] = useState(false)
     
     {/* Understanding if it is a mobile device and according to it, deciding between navbar and drawler  */}
     const [isMobileWidth, setIsMobileWidth] = useState(true)
@@ -34,7 +34,7 @@ export default function SideBar() {
     useEffect(() => {
         const handleNavbar = () => {
             dispatch(setNavbar(false))
-            setIsDrawerOpen(true) /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+            setIsDrawerOpen(false) /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
         }
         handleNavbar()
     }, [isMobileWidth])
@@ -47,6 +47,10 @@ export default function SideBar() {
             dispatch(setNavbar(!navbar))
         }
     }
+    const handleClose = () => {
+        setIsSnackOpen(false)
+    }
+    
 
     const person = {
         name: 'Samet',
@@ -57,7 +61,7 @@ export default function SideBar() {
 
 
     
-    return <aside className={classNames("flex sticky z-10 duration-300 absolute rounded-l-lg w-60 ml-3 pt-1 top-0 bg-blue-500 bg-opacity-30 h-[100vh] ", 
+    return <aside className={classNames("flex sticky z-10 duration-300 absolute rounded-l-lg w-60 ml-3 pt-1 top-0 bg-third bg-opacity-30 h-[100vh] ", 
     {' !w-0 bg-transparent ' : !navbar})}>
     
     {/* This Part is for desktop devices */}
@@ -90,9 +94,15 @@ export default function SideBar() {
         </> }
         <div className="text-sm md:text-base">
         {isLogged ? 
-                <button onClick={() => dispatch(logout())}>Burasi cikis yap</button>
+                <button onClick={() => {
+                    dispatch(logout())
+                    setIsSnackOpen(true)
+                    }}>Burasi cikis yap</button>
         :
-                <button onClick={() => dispatch(login(JSON.stringify(person)))}>Burasi giris yap</button>
+                <button onClick={() => {
+                    dispatch(login(JSON.stringify(person)))
+                    setIsSnackOpen(true)
+                }}>Burasi giris yap</button>
         }
         </div>
         </nav>
@@ -100,7 +110,7 @@ export default function SideBar() {
         }
     </div>
     <div 
-        className="flex rounded-full cursor-pointer p-2 justify-center items-center m-1 w-8 h-8 opacity-80 bg-zinc-200 hover:bg-zinc-100 hover:opacity-100 " onClick={handleClick}>
+        className="flex rounded-full cursor-pointer p-2 justify-center items-center m-1 w-8 h-8 opacity-80 bg-[#1976D2] text-white hover:bg-blue-400 hover:opacity-100 " onClick={handleClick}>
         {navbar ? <ArrowBackIcon /> : <DehazeRoundedIcon />}
     </div>
 
@@ -125,8 +135,8 @@ export default function SideBar() {
                     key={key}
                     className='flex shadow-md pl-2 py-0.5 tracking-wider bg-zinc-200 my-1.5 rounded-lg hover:shadow-sky-200/10 '
                     >
-                    <ListItem disablePadding>
-                        <ListItemIcon>
+                    <ListItem disablePadding content="div">
+                        <ListItemIcon sx={{minWidth: '2rem'}}>
                             <NavLink to={menu.path}>
                                 {menu.element}
                             </NavLink>
@@ -140,6 +150,11 @@ export default function SideBar() {
             </List>
         </Box>
     </Drawer>
+    <Snackbar open={isSnackOpen} autoHideDuration={2000} onClose={handleClose}>
+            <Alert elevation={2} variant="filled" severity="success">
+                {isLogged ? 'Giriş İşlemi Başarılı' : 'Çıkış İşlemi Başarılı'}
+            </Alert>
+    </Snackbar>
     </aside>
 
 

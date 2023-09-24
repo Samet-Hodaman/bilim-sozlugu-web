@@ -11,7 +11,7 @@ export default function Home(){
         {/*** LEAVE A MESSAGE SECTION  ***/}
         <section className="p-2 md:p-5 mx-auto max-w-3xl ">
             <div className="flex flex-col items-center pt-1 ">
-                <h2 className="text-white my-2 ml-3">
+                <h2 className="secondary font-bold my-2 ml-3">
                     Bize bir mesaj bırakın.
                 </h2>
                 <textarea
@@ -19,7 +19,7 @@ export default function Home(){
                     onClick={() => setIsClicked(true)}
                     value={text}
                     onChange={(e) => setText(e.target.value)}
-                    className="w-full h-52 rounded-lg resize-none indent-5 p-2 lg:tracking-wide text-xl focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200" 
+                    className="w-full fifth bg-primary shadow-xl shadow-blue-600/30 h-40 rounded-lg resize-none indent-5 p-2 lg:tracking-wide text-xl focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200" 
                 />
                 {isClicked && <div className="flex justify-end w-full m-3 ">
                     <Button onClick={() => console.log(text)} color="primary" variant="contained"> Gönder</Button>

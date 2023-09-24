@@ -8,11 +8,11 @@ import { useSelector } from "react-redux"
 
 export default function MainLayout() {
     const navbar = useSelector(state => state.site.navbar)
-    return <div className="flex flex-col bg-gradient-to-r from-sky-50 to-lime-50">
+    return <div className="flex flex-col bg-gradient-to-r from-sky-100 to-lime-50 ">
     <Header />
     <section className="flex justify-center relative">
         <SideBar />
-        <div className={classNames("duration-300 bg-sky-700 bg-opacity-30 max-w-4xl mr-3 rounded-r-lg sm:rounded-r-lg ",
+        <div className={classNames("duration-300 bg-[#dbe6ee] bg-opacity-30 max-w-4xl mr-3 rounded-r-lg sm:rounded-r-lg ",
         {"!max-w-6xl rounded-l-lg ": !navbar})}>
             <section >
                 <Outlet />

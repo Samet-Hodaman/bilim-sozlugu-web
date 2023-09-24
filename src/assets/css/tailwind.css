@@ -3,7 +3,7 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Mooli&family=Playfair+Display&family=Roboto:ital,wght@0,400;1,500&display=swap');
 
-.temples {
+.bg-header {
     background: linear-gradient(to bottom, #fbcfe86b, rgba(110, 250, 17, 0));
 }
 

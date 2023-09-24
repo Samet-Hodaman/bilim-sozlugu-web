@@ -6,6 +6,8 @@ export default function Buttons(props) {
         type={props.type}
         onClick={props.onClick}
         variant="contained"
+        color={props.color}
+        size={props.size}
         >
             {props.children}
         </Button>

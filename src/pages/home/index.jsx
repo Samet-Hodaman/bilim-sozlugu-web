@@ -1,7 +1,7 @@
-import { useState } from "react";
-import Button from "../../components/Button";
+import { useEffect, useState } from "react";
 import Post from "../../components/Post";
 import { DUMMY_POSTS } from "../../utils/consts/dummy-data";
+import { Button } from "@mui/material";
 
 export default function Home(){
     const [isClicked, setIsClicked] = useState(false)
@@ -22,7 +22,8 @@ export default function Home(){
                     className="w-full h-52 rounded-lg resize-none indent-5 p-2 lg:tracking-wide text-xl focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200" 
                 />
                 {isClicked && <div className="flex justify-end w-full m-3 ">
-                    <Button onClick={() => console.log(text)}>Gönder</Button>
+                    <Button onClick={() => console.log(text)} color="primary" variant="contained"> Gönder</Button>
+                    {/*<Button onClick={() => console.log(text)} color='secondary'>Gönder</Button>*/}
                 </div>}
             </div>
         </section>

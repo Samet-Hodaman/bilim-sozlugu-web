@@ -2,6 +2,7 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import Button from "../../../components/Button"
 import InputBox from "../../../components/InputBox"
+import { TextField } from "@mui/material"
  
 export default function Login({link}){
     const [form, setForm] = useState({
@@ -20,6 +21,7 @@ export default function Login({link}){
                 {link.login.title}
             </h1>
                 <form method="post" action="/" className="flex flex-col bg-zinc-100 p-8 w-[28rem]">
+                    <TextField label='name' />
                     <InputBox 
                         title="Email:" 
                         type="email" 

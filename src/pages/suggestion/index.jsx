@@ -3,9 +3,16 @@ import Button from "../../components/Button";
 import { NavLink } from "react-router-dom";
 import Comment from "../../components/Comment";
 import { DUMMY_COMMENTS } from "../../utils/consts/dummy-data";
+import { useEffect, useState } from "react";
 
 export default function SuggestionRequest(){
-    const { user } = useSelector(state=> state.auth)
+    const [userInfo, setUserInfo] = useState({
+        name: '',
+    });
+    const {isLogged, user} = useSelector(state => state.auth)
+    useEffect(() => {
+        setUserInfo(JSON.parse(user))
+    }, []);
     
     return <main className="container relative">
         {/*** SHARE YOUR OPINION SECTION  ***/}
@@ -18,7 +25,7 @@ export default function SuggestionRequest(){
                 className="flex rounded-lg indent-3 md:indent-5 overflow-hidden resize-none min-h-[10rem] text-base md:text-lg p-3 m-4"/>
             <div className="flex justify-between px-2">
                 <div>
-                {!user && <>
+                {!isLogged ? <>
                     <label for="name" className="text-white ">Kim: </label>
                     <input name="name" id="name" type='name' className="rounded ml-1 " />
                     <span className="ml-2 text-white ">
@@ -28,9 +35,10 @@ export default function SuggestionRequest(){
                         <input type="checkbox" id="private" name="private" value="Açık paylaş" title="açık paylaş" />
                         <label for="private" className="ml-2 ">Açık paylaş</label>
                     </div>
-                </>
+                </>:
+                <div className="flex flex-row gap-1 ml-4"><p>Gönderen:</p>{userInfo.name} {userInfo.surname}</div>
                 }
-                    <div className="my-2">
+                    <div className="my-3">
                         <Button >Gönder</Button> 
                     </div>
                 </div>
@@ -45,7 +53,7 @@ export default function SuggestionRequest(){
             <div className="flex flex-col bg-sky-200  flex-col items-center my-2 p-2">
                 <div className="flex flex-col w-full m-2 ">
                     {DUMMY_COMMENTS.map((c,key) => {
-                        return (<Comment name={c.name} date={c.date}>"{c.text}"</Comment>)
+                        return (<Comment name={c.name} date={c.date} key={key}>"{c.text}"</Comment>)
                     })}
                 </div>
             </div>

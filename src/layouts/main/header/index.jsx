@@ -8,13 +8,18 @@ export default function Header(){
     const user = useSelector(state => state.auth)
     const dispatch = useDispatch()
 
-    return <header className="w-full h-auto temples">
+    return <header className="w-full h-auto bg-header">
     <div className="max-w-6xl mx-auto">
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center gap-2">
             <div className=" rounded-full flex-row ">
                 <a href="/">
                     <Logo text="BİLİM SÖZLÜĞÜ"/>
                 </a>
+            </div>
+            <div>
+            <h2 className="montserrat text-red-600 font-semibold">
+                HENÜZ TEST AŞAMASINDADIR!
+            </h2>
             </div>
             <div>
             {user ? 

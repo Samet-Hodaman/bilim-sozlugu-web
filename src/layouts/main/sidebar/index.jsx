@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setNavbar } from "../../../store/site";
 import { login,logout} from "../../../store/auth";
 import { useEffect, useState } from "react";
-import { Box, Drawer, IconButton, Typography } from "@mui/material";
+import { Box, Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
 
 
 export default function SideBar() {
@@ -99,27 +99,35 @@ export default function SideBar() {
         anchor='left'
         open={isDrawerOpen}
         onClose={() => setIsDrawerOpen(false)}
+        onKeyDown={() => setIsDrawerOpen(false)}
         >
         <Box p={2} width='250px' textAlign='center' role='presentation'>
             <Typography variant='h6' component='div'>
                 Menü
             </Typography>
+            <List>
             {/* This part will be updated according to Material-ui components */}
             {SIDEBAR_MENU.map((menu,key) => {
                 if (menu.isLogged === isLogged || menu.isLogged === undefined) 
                 return(
-                <NavLink 
-                    to={menu.path}
-                    key={key}
-                    className='flex shadow-md gap-x-1 tracking-wider bg-zinc-100 px-1.5 py-0.5 text-xs sm:px-3 sm:py-1 rounded-lg max-w-[15rem] text-lg hover:bg-zinc-50 hover:shadow-sky-200/10 '
-                >
-                    <div className="text-sky-500 " >
-                        {menu.element}
-                    </div>
-                    {menu.title}
-                </NavLink>)
+                    <NavLink 
+                        to={menu.path}
+                        key={key}
+                        className='flex shadow-md gap-x-1 tracking-wider bg-zinc-100 px-1.5 py-0.5 text-xs sm:px-3 sm:py-1 rounded-lg max-w-[15rem] text-lg hover:bg-zinc-50 hover:shadow-sky-200/10 '
+                    >
+                <ListItem>
+                    <ListItemIcon>
+                        <NavLink to={menu.path}>
+                            {menu.element}
+                        </NavLink>
+                    </ListItemIcon>
+                    <ListItemText primary={menu.title} />
+                </ListItem>
+                    </NavLink>
+                )
             })}
             {/* ************************************************************* */}
+            </List>
         </Box>
     </Drawer>
     </aside>

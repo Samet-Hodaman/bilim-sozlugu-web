@@ -3,6 +3,7 @@ import { SIDEBAR_MENU } from "../../../utils/consts/sidebar"
 import classNames from 'classnames'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import DehazeRoundedIcon from '@mui/icons-material/DehazeRounded';
+import CloseIcon from '@mui/icons-material/Close';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useDispatch, useSelector } from "react-redux";
 import { setNavbar } from "../../../store/site";
@@ -34,23 +35,18 @@ export default function SideBar() {
     useEffect(() => {
         const handleNavbar = () => {
             dispatch(setNavbar(false))
-            setIsDrawerOpen(false) /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+            setIsDrawerOpen(false)
         }
         handleNavbar()
     }, [isMobileWidth])
 
     const handleClick = () => {
-        console.log(isDrawerOpen);
         if(isMobileWidth){
             setIsDrawerOpen(true)
         } else {
             dispatch(setNavbar(!navbar))
         }
     }
-    const handleClose = () => {
-        setIsSnackOpen(false)
-    }
-    
 
     const person = {
         name: 'Samet',
@@ -75,6 +71,7 @@ export default function SideBar() {
                     to={menu.path}
                     key={key}
                     className='flex shadow-md gap-x-1 tracking-wider bg-zinc-100 px-1.5 py-0.5 text-xs sm:px-3 sm:py-1 rounded-lg max-w-[15rem] text-lg hover:bg-zinc-50 hover:shadow-sky-200/10 '
+                    onClick={() => dispatch(setNavbar(false))}
                 >
                     <div className="text-sky-500 " >
                         {menu.element}
@@ -134,6 +131,7 @@ export default function SideBar() {
                     to={menu.path}
                     key={key}
                     className='flex shadow-md pl-2 py-0.5 tracking-wider bg-zinc-200 my-1.5 rounded-lg hover:shadow-sky-200/10 '
+                    onClick={() => setIsDrawerOpen(false)}
                     >
                     <ListItem disablePadding content="div">
                         <ListItemIcon sx={{minWidth: '2rem'}}>
@@ -150,11 +148,12 @@ export default function SideBar() {
             </List>
         </Box>
     </Drawer>
-    <Snackbar open={isSnackOpen} autoHideDuration={2000} onClose={handleClose}>
+    <Snackbar open={isSnackOpen} autoHideDuration={2000} onClose={() => setIsSnackOpen(false)}>
             <Alert elevation={2} variant="filled" severity="success">
                 {isLogged ? 'Giriş İşlemi Başarılı' : 'Çıkış İşlemi Başarılı'}
             </Alert>
     </Snackbar>
+    
     </aside>
 
 

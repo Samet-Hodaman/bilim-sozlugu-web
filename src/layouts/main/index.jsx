@@ -12,7 +12,7 @@ export default function MainLayout() {
     <Header />
     <section className="flex justify-center relative">
         <SideBar />
-        <div className={classNames("duration-300 bg-[#dbe6ee] bg-opacity-30 max-w-4xl mr-3 rounded-r-lg sm:rounded-r-lg ",
+        <div className={classNames("duration-300 bg-[#dbe6ee] bg-opacity-0 max-w-4xl mr-3 rounded-r-lg sm:rounded-r-lg ",
         {"!max-w-6xl rounded-l-lg ": !navbar})}>
             <section >
                 <Outlet />

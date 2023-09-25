@@ -27,23 +27,25 @@ export default function About(){
 
 
     return <main className="w-full p-3 relative ">
+    <img src="img/Wallpaper.png" className="opacity-80 my-6 rounded-xl "/>
     <h1 className="font-bold text-xl sm:text-3xl my-1 sm:my-2 mooli italic text-center text-[#1d4ed8]">
         Bilim Sözlüğü'ne Hoş geldiniz
     </h1>
     <p className="m-2 pl-2 sm:m-4 text-[0.7rem] sm:text-base mooli">Bilimin izinde, hep birlikte daima ileriye…</p>
-    <section className="flex flex-col gap-20 mx-auto m-2 p-2 max-w-5xl " >
-    <img src="img/Wallpaper.png" className="opacity-80 rounded-xl "/>
-    
+    <section className="flex flex-col gap-20 mx-auto mt-5  max-w-5xl " >
     {/* About Contents are displayed here !*/}
     {ABOUT_CONTENT.map((item, index) => {
         const isOdd = index % 2 === 0
-        return <div className={classNames('flex flex-col gap-4 p-4 rounded-xl shadow-xl shadow-blue-300/20 element reveal ',{'bg-forth ': isOdd},{'bg-gradient-to-r bg-third' : !isOdd})} key={index}>
-            <h2 className={classNames('font-semibold text-rose-900 ',{'indent-2 ': isOdd},{'text-right mr-5  ' : !isOdd})}>
+        return <div className={classNames('flex flex-row gap-6 sm:gap-10 p-4 rounded-xl shadow-xl shadow-blue-300/20 element reveal ',{'bg-forth flex-row ': isOdd},{'bg-gradient-to-r bg-third flex-row-reverse ' : !isOdd})} key={index}>
+            <img src="img/about/question_tag.png" className="opacity-80 w-20 h-20 sm:w-40 sm:h-40 my-6 rounded-xl "/>
+            <div className="flex flex-col gap-2">
+            <h2 className='font-semibold text-rose-900 indent-1 '>
                 {item.title}
             </h2>
             <p className={classNames('indent-5 text-base sm:text-lg ',{'text-[#003366] ': isOdd},{'text[#111] ' : !isOdd})}>
                 {item.content}
             </p>
+            </div>
         </div>
     })}
     </section>

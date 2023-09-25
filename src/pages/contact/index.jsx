@@ -1,5 +1,6 @@
 import { Box,List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
 import {Instagram} from '@mui/icons-material'
+import { SOCIAL_MEDIA_ACCOUNDS } from '../../utils/consts/social'
 export default function Contact() {
     return <main className="container p-8 mt-5 rounded">
         <section className="flex flex-col bg-sky-800 rounded-xl px-3 py-2">
@@ -10,23 +11,18 @@ export default function Contact() {
                 Bize Ulaşın: 
             </div>
             <div>
-            <List>
-                <ListItem>
-                    <ListItemIcon><Instagram /></ListItemIcon>
-                    <ListItemText>Instagram: </ListItemText>
-                    <ListItemText>@bilimsozlugu_</ListItemText>
+            <List sx={' gap-5'}>
+            {SOCIAL_MEDIA_ACCOUNDS.map((item,index) => {
+                return <ListItem key={index}>
+                
+                    <ListItemIcon>{item.element} </ListItemIcon>
+                    <ListItemText className='mr-16'>{item.social}:</ListItemText>
+                    <ListItemText>{item.name} </ListItemText>
                 </ListItem>
+                {/* Use Table React Component for this */}
+            })}
             </List>
-                 <a href="https://www.instagram.com/bilimsozlugu_/">@bilimsozlugu_</a>
-                Facebook: <a href="https://www.instagram.com/bilimsozlugu_/">@bilimsozlugu_</a>
-                Twitter: <a href="https://www.instagram.com/bilimsozlugu_/">@bilimsozlugu_</a>
-                Threads: <a href="https://www.instagram.com/bilimsozlugu_/">@bilimsozlugu_</a>
-                Linkedin: <a href="https://www.instagram.com/bilimsozlugu_/">@bilimsozlugu_</a>
-                Tiktok: <a href="https://www.instagram.com/bilimsozlugu_/">@bilimsozlugu_</a>
-                Youtube: <a href="https://www.instagram.com/bilimsozlugu_/">@bilimsozlugu_</a>
-                Web: <a href="https://www.instagram.com/bilimsozlugu_/">@bilimsozlugu_</a>
             </div>
-            <Box></Box>
         </section>
     </main>
 }

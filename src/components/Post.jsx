@@ -21,7 +21,7 @@ export default function Post(props){
             )}>
                 {title}
             </div>
-            <div className="primary indent-5 line-clamp-5 my-2 text-sm sm:text-base mb-5">
+            <div className="primary word-wrap indent-5 line-clamp-5 my-2 text-sm sm:text-base mb-5">
                 {content}
             </div>
                 <a className="underline ml-1">Devamı...</a>

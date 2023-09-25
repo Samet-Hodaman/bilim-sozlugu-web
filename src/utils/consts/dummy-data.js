@@ -26,7 +26,7 @@ export const DUMMY_POSTS = [
         category: "BİYOLOJİ",
         img: 'gelismis_hidrojen_evrimi.png',
         title: 'Gelişmiş Hidrojen Evrimi',
-        content: "Kara, Altyapi ve Ulastirma Bakanligr'nin verilerine göre, 2022 yilina kadar yaklasik 30.000 hidrojenle çalisan araç kayit altina alinacak; bu, 2018'e göre Üç kat arts anlamina geliyor. Ancak Ülkede yalnizca 135 hidrojen dolum istasyonu bulunuyor. Hidrojenle çalisan arabalarin erisilebilirligini artirmak ve hidrojeni geçerli bir enerji kaynagi olarak olusturmak için, hidrojen Üretim maliyetinin düsürülmesi ve ekonomik fizibiliteye ulasilmasi gerekiyor. Sudan hidrojen üretmekten sorumlu süreç olan elektroliz-hidrojen evriminin verimliliginin en üst düzeye ikarilmasi, bu amaca ulasmada kritik öneme sahiptir."
+        content: "Kara, Altyapi ve Ulastirma Bakanlığı'nin verilerine göre, 2022 yilina kadar yaklasik 30.000 hidrojenle çalisan araç kayit altina alinacak; bu, 2018'e göre Üç kat arts anlamina geliyor. Ancak Ülkede yalnizca 135 hidrojen dolum istasyonu bulunuyor. Hidrojenle çalisan arabalarin erisilebilirligini artirmak ve hidrojeni geçerli bir enerji kaynagi olarak olusturmak için, hidrojen Üretim maliyetinin düsürülmesi ve ekonomik fizibiliteye ulasilmasi gerekiyor. Sudan hidrojen üretmekten sorumlu süreç olan elektroliz-hidrojen evriminin verimliliginin en üst düzeye ikarilmasi, bu amaca ulasmada kritik öneme sahiptir."
     },
     {
         category: "BİYOLOJİ",
@@ -56,7 +56,7 @@ export const DUMMY_POSTS = [
         category: "BİYOLOJİ",
         img: 'gelismis_hidrojen_evrimi.png',
         title: 'Gelişmiş Hidrojen Evrimi',
-        content: "Kara, Altyapi ve Ulastirma Bakanligr'nin verilerine göre, 2022 yilina kadar yaklasik 30.000 hidrojenle çalisan araç kayit altina alinacak; bu, 2018'e göre Üç kat arts anlamina geliyor. Ancak Ülkede yalnizca 135 hidrojen dolum istasyonu bulunuyor. Hidrojenle çalisan arabalarin erisilebilirligini artirmak ve hidrojeni geçerli bir enerji kaynagi olarak olusturmak için, hidrojen Üretim maliyetinin düsürülmesi ve ekonomik fizibiliteye ulasilmasi gerekiyor. Sudan hidrojen üretmekten sorumlu süreç olan elektroliz-hidrojen evriminin verimliliginin en üst düzeye ikarilmasi, bu amaca ulasmada kritik öneme sahiptir."
+        content: "Kara, Altyapi ve Ulastirma Bakanlıgı'nin verilerine göre, 2022 yilina kadar yaklasik 30.000 hidrojenle çalisan araç kayit altina alinacak; bu, 2018'e göre Üç kat arts anlamina geliyor. Ancak Ülkede yalnizca 135 hidrojen dolum istasyonu bulunuyor. Hidrojenle çalisan arabalarin erisilebilirligini artirmak ve hidrojeni geçerli bir enerji kaynagi olarak olusturmak için, hidrojen Üretim maliyetinin düsürülmesi ve ekonomik fizibiliteye ulasilmasi gerekiyor. Sudan hidrojen üretmekten sorumlu süreç olan elektroliz-hidrojen evriminin verimliliginin en üst düzeye ikarilmasi, bu amaca ulasmada kritik öneme sahiptir."
     },
     {
         category: "BİYOLOJİ",
@@ -86,7 +86,7 @@ export const DUMMY_POSTS = [
         category: "BİYOLOJİ",
         img: 'gelismis_hidrojen_evrimi.png',
         title: 'Gelişmiş Hidrojen Evrimi',
-        content: "Kara, Altyapi ve Ulastirma Bakanligr'nin verilerine göre, 2022 yilina kadar yaklasik 30.000 hidrojenle çalisan araç kayit altina alinacak; bu, 2018'e göre Üç kat arts anlamina geliyor. Ancak Ülkede yalnizca 135 hidrojen dolum istasyonu bulunuyor. Hidrojenle çalisan arabalarin erisilebilirligini artirmak ve hidrojeni geçerli bir enerji kaynagi olarak olusturmak için, hidrojen Üretim maliyetinin düsürülmesi ve ekonomik fizibiliteye ulasilmasi gerekiyor. Sudan hidrojen üretmekten sorumlu süreç olan elektroliz-hidrojen evriminin verimliliginin en üst düzeye ikarilmasi, bu amaca ulasmada kritik öneme sahiptir."
+        content: "Kara, Altyapi ve Ulastirma Bakanlığı'nin verilerine göre, 2022 yilina kadar yaklasik 30.000 hidrojenle çalisan araç kayit altina alinacak; bu, 2018'e göre Üç kat arts anlamina geliyor. Ancak Ülkede yalnizca 135 hidrojen dolum istasyonu bulunuyor. Hidrojenle çalisan arabalarin erisilebilirligini artirmak ve hidrojeni geçerli bir enerji kaynagi olarak olusturmak için, hidrojen Üretim maliyetinin düsürülmesi ve ekonomik fizibiliteye ulasilmasi gerekiyor. Sudan hidrojen üretmekten sorumlu süreç olan elektroliz-hidrojen evriminin verimliliginin en üst düzeye ikarilmasi, bu amaca ulasmada kritik öneme sahiptir."
     },
     {
         category: "BİYOLOJİ",

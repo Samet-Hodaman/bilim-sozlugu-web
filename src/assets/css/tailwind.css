@@ -14,6 +14,12 @@
     background: linear-gradient(to bottom, #fbcfe86b, rgba(110, 250, 17, 0));
 }
 
+.word-wrap {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
 body {
     @apply bg-stone-200;
     background: url()

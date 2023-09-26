@@ -9,11 +9,11 @@ export default function AuthLayout(){
     
     return(
             <section>
-            <div className="flex justify-center items-center flex-col w-full h-[40rem]">
-            <NavLink to='/'>
-                <Logo text="BİLİM SÖZLÜĞÜ"/>
-            </NavLink>
-            <main className="bg-white rounded p-2 mt-2">
+            <div className="flex flex-col justify-center items-center w-screen h-[40rem]">
+            <main className="flex flex-col bg-white rounded p-2 mt-2">
+                <NavLink to='/'>
+                    <h1 className="primary font-semibold italic opacity-90 text-xl sm:text-3xl mooli text-center">Bilim sözlüğü</h1>
+                </NavLink>
                 <Outlet />
             </main>
             </div>

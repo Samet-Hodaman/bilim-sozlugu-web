@@ -107,7 +107,7 @@ export default function SideBar() {
         }
     </div>
     <div 
-        className="flex rounded-full cursor-pointer p-2 justify-center items-center m-1 w-8 h-8 opacity-80 bg-[#1976D2] text-white hover:bg-blue-400 hover:opacity-100 " onClick={handleClick}>
+        className="flex rounded-full cursor-pointer p-2 justify-center items-center m-1 w-8 h-8 opacity-80 bg-primary text-white hover:bg-sky-900 hover:opacity-100 " onClick={handleClick}>
         {navbar ? <ArrowBackIcon /> : <DehazeRoundedIcon />}
     </div>
 

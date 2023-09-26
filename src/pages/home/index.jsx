@@ -28,7 +28,7 @@ export default function Home(){
         </section>
 
          {/*** POSTS SECTION  ***/}
-        <section className="grid gap-x-3 gap-y-4 mx-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+        <section className="relative grid gap-x-3 gap-y-4 mx-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
         {DUMMY_POSTS.map((post,key) =>{
             return (<Post data={post} key={key}/>)
         })}

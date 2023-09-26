@@ -1,8 +1,7 @@
 export default function Footer(){
     return (
-        <footer className="flex justify-center items-center sticky top-0 w-full h-32 bg-black ">
+        <footer className="top-0 w-screen h-32 bg-gradient-to-t from-black to-transparent ">
             <div className="text-white ">
-                Burasi footer
             </div>
         </footer>
     )

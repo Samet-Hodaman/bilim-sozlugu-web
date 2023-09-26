@@ -9,7 +9,7 @@ export default function About(){
         console.log(elements);  
         elements.forEach((element) => {
             const rect = element.getBoundingClientRect();
-            const isVisible = rect.top <= window.innerHeight - 100;
+            const isVisible = rect.top <= window.innerHeight - 250;
             if (isVisible) {
             element.classList.add('revealed');
             }
@@ -27,7 +27,6 @@ export default function About(){
 
 
     return <main className="w-full p-3 relative ">
-    <img src="img/Wallpaper.png" className="opacity-80 my-6 rounded-xl "/>
     <h1 className="font-bold text-xl sm:text-3xl my-1 sm:my-2 mooli italic text-center text-[#1d4ed8]">
         Bilim Sözlüğü'ne Hoş geldiniz
     </h1>
@@ -39,7 +38,7 @@ export default function About(){
         return <div className={classNames('flex flex-row gap-6 sm:gap-10 p-4 rounded-xl shadow-xl shadow-blue-300/20 element reveal ',{'bg-forth flex-row ': isOdd},{'bg-gradient-to-r bg-third flex-row-reverse ' : !isOdd})} key={index}>
             <img src="img/about/question_tag.png" className="opacity-80 w-20 h-20 sm:w-40 sm:h-40 my-6 rounded-xl "/>
             <div className="flex flex-col gap-2">
-            <h2 className='font-semibold text-rose-900 indent-1 '>
+            <h2 className='font-semibold text-rose-700 indent-1 '>
                 {item.title}
             </h2>
             <p className={classNames('indent-5 text-base sm:text-lg ',{'text-[#003366] ': isOdd},{'text[#111] ' : !isOdd})}>
@@ -49,6 +48,7 @@ export default function About(){
         </div>
     })}
     </section>
+    <img src="img/Wallpaper.png" className="opacity-80 my-6 rounded-xl "/>
     </main>
 }
 

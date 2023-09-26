@@ -55,7 +55,7 @@ export const SOCIAL_MEDIA_ACCOUNDS = [
     {
         name: "Bilim Sözlüğü",
         URL: "https://bilim-sozlugu-web.vercel.app/",
-        platform: "Web Site",
+        platform: "Web",
         element: <Language />
     },
 ]

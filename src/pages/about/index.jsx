@@ -1,12 +1,14 @@
 import classNames from "classnames"
 import { ABOUT_CONTENT } from "../../utils/consts/about"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { ArrowDownward } from "@mui/icons-material";
 
 export default function About(){
+    const [isScrolled, setIsScrolled] = useState(false)
     useEffect(() => {
     const elements = document.querySelectorAll('.element');
     const handleScroll = () => {
-        console.log(elements);  
+        setIsScrolled(true)
         elements.forEach((element) => {
             const rect = element.getBoundingClientRect();
             const isVisible = rect.top <= window.innerHeight - 250;
@@ -30,7 +32,10 @@ export default function About(){
     <h1 className="font-bold text-xl sm:text-3xl my-1 sm:my-2 mooli italic text-center text-[#1d4ed8]">
         Bilim Sözlüğü'ne Hoş geldiniz
     </h1>
-    <p className="m-2 pl-2 sm:m-4 text-[0.7rem] sm:text-base mooli">Bilimin izinde, hep birlikte daima ileriye…</p>
+    <p className="m-2 pl-2 inline sm:m-4 text-[0.7rem] sm:text-base mooli">
+        Bilimin izinde, hep birlikte daima ileriye… 
+    </p>
+    {!isScrolled && <ArrowDownward className="bg-[#fdfdfd] rounded-full animate-bounce mr-2 shadow-xl" />}
     <section className="flex flex-col gap-20 mx-auto mt-5  max-w-5xl " >
     {/* About Contents are displayed here !*/}
     {ABOUT_CONTENT.map((item, index) => {

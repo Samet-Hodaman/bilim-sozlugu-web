@@ -8,7 +8,7 @@ export default function Header(){
     const user = useSelector(state => state.auth)
     const dispatch = useDispatch()
 
-    return <header className="w-full h-auto bg-header">
+    return <header className="h-auto bg-header">
     <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center gap-2">
             <div className=" rounded-full flex-row ">

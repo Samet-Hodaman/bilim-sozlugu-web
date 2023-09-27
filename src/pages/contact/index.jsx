@@ -13,16 +13,13 @@ export default function Contact() {
         setIsSnackOpen(true)
         e.preventDefault()
     }
-    return <main className="container p-8 mt-5 rounded">
-        <section className="flex flex-col bg-sky-800 w-auto rounded-xl px-3 py-2">
-            <div className='indent-8 text-stone-100 p-4'>
+    return <main className="p-8 mt-5 rounded">
+        <section className="flex flex-col bg-sky-800 rounded-xl px-3 py-2">
+            <div className='indent-8 text-[#eee] sm:font-semibold p-4'>
                 <p>
-                    Web sitemizi ziyaret ettiğiniz için teşekkür ederiz. Bilim Sözlüğü Ailesi olarak, sizinle iletişim kurma fırsatını değerli buluyor ve iletilerinizle özenle ilgileniyoruz.
-                    Sorularınızı ve merak ettiklerinizi bizimle paylaşmanız için buradayız. İster bilimsel bir merakınız olsun, isterse herhangi bir konuda danışmanlık arayışınız, biz size yardımcı olmaktan mutluluk duyarız. Her iletişimimizde, sizinle daha yakından tanışmak ve sizin için en iyi hizmeti sunmak için çaba gösteriyoruz.
-                    Geri bildirimlerinizi her zaman bekliyoruz. Web sitemizi daha iyi hale getirmek ve içeriklerimizi daha da iyileştirmek için sizden gelen geri bildirimlere her zaman açığız.
-                </p>
-                    Web sitemizi ziyaret ettiğiniz için teşekkür ederiz.
-                <p>
+                    Bilim Sözlüğü Ailesi olarak, sizinle iletişim kurma fırsatını değerli buluyor ve iletilerinizle özenle ilgileniyoruz.
+                    Sorularınızı ve merak ettiklerinizi bizimle paylaşmanız için buradayız. İster bilimsel bir merakınız olsun, isterse herhangi bir konuda danışmanlık arayışınız, biz size yardımcı olmaktan mutluluk duyarız.
+                    Geri bildirimleriniz bizim için çok önemli. Web sitemizi daha iyi hale getirmek ve içeriklerimizi daha da iyileştirmek için sizden gelen geri bildirimlere her zaman açığız.                
                 </p>
                     Sevgiler,
                 <p>
@@ -37,30 +34,30 @@ export default function Contact() {
                 <Mail /> Gmail : bilimsozlugu0@gmail.com
             </div>
             </CopyToClipboard>
-            <h2>Sosyal medya hesaplarımız</h2>
+            <h2 className='my-2'>Sosyal medya hesaplarımız</h2>
             <TableContainer component={Paper} sx={{
                 backgroundColor: 'transparent',
-                border: '1px solid wheat'
+                border: '1px solid #626262'
             }}>
-            <Table >
+            <Table className='bg-secondary'>
                 <TableBody>
             {SOCIAL_MEDIA_ACCOUNDS.map((item,index) => {
-                return <TableRow key={index} className='text-base text-zinc-300'>
+                return <TableRow key={index} className='border-b border-zinc-200'>
                     
-                    <TableCell>
+                    <TableCell sx={{padding:'4px', borderBottom: '2px solid #626262',color:'#f7f7f7',fontFamily:'Montserrat','@media (min-width: 600px)': {padding:'8px'}}}>
                     <a href={item.URL}>
                         {item.element}
                     </a>
-                        {item.platform}
+                        <span className='ml-1 sm:ml-2 lg:ml-3 text-[0.8rem] sm:text-base font-semibold'>{item.platform}</span>
                     </TableCell>
-                    <TableCell>
+                    <TableCell sx={{padding:'4px',borderBottom: '2px solid #626262'}}>
                         <a 
                             title='Adrese git'
                             target="_blank" 
                             rel="noopener noreferrer"
                             href={item.URL}
                             >
-                            {item.URL}
+                            <p className='text-sky-300 text-[0.8rem] sm:text-base w-[9.3rem] sm:w-80 md:w-auto word-wrap'>{item.URL}</p>
                         </a>
                     </TableCell>
                 </TableRow>

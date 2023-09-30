@@ -2,7 +2,6 @@ import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import Button from "../../../components/Button"
 import InputBox from "../../../components/InputBox"
-import { TextField } from "@mui/material"
  
 export default function Login({link}){
     const [form, setForm] = useState({
@@ -17,15 +16,11 @@ export default function Login({link}){
         })
     }
     return (<>
-        <h1 className="p-4 text-xl font-semibold">
+        <h1 className="p-2 md:p-4 text-xl font-semibold">
             {link.login.title}
         </h1>
-        <form method="post" action="/" className="flex flex-col bg-zinc-100 p-8 w-[28rem]">
-        <div className="flex flex-col gap-2">
-            <TextField label='email' type="email" autoComplete="none" placeholder="birisi@gmail.com"/>
-            <TextField label='Şifre' type="password" placeholder="****" />
-        </div>
-            <InputBox 
+        <form method="post" action="/" className="flex flex-col text-sm md:text-base bg-zinc-100 p-2 md:p-8 md:w-[28rem]">
+            <InputBox
                 title="Email:" 
                 type="email"
                 name="email" 

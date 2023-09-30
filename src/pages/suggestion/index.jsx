@@ -27,7 +27,7 @@ export default function SuggestionRequest(){
                 <div>
                 {!isLogged ? <div className="secondary">
                     <label for="name">Kim: </label>
-                    <input name="name" id="name" type='name' className="rounded ml-1 bg-primary shadow-inner shadow-slate-500 " />
+                    <input name="name" id="name" type='name' className="fifth rounded ml-1 bg-primary shadow-inner shadow-slate-500 " />
                     <span className="ml-2 ">
                         ya da <NavLink className='underline underline-offset-2' to='/auth/giris-yap'>giriş yapın.</NavLink>
                     </span>

@@ -18,10 +18,10 @@ export default function Register({link}){
         })
     }
     return (<>
-        <h1 className="p-4 text-xl font-semibold">
+        <h1 className="p-2 md:p-4 text-xl font-semibold">
                 {link.register.title}
             </h1>
-                <form method="post" action="/" className="flex flex-col bg-zinc-100 p-8 w-[28rem]">
+                <form method="post" action="/" className="flex flex-col text-sm md:text-base bg-zinc-100 p-2 md:p-8 md:w-[28rem]">
                     <InputBox 
                         title="Adı:" 
                         type="text" 

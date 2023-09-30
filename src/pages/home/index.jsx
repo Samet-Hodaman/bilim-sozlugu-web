@@ -6,6 +6,7 @@ import { Button } from "@mui/material";
 export default function Home(){
     const [isClicked, setIsClicked] = useState(false)
     const [text,setText] = useState('')
+    window.scrollTo(0,0)
 
     return <main className="container relative ">
         {/*** LEAVE A MESSAGE SECTION  ***/}

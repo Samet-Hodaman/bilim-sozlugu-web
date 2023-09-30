@@ -5,6 +5,7 @@ import { ArrowDownward } from "@mui/icons-material";
 
 export default function About(){
     const [isScrolled, setIsScrolled] = useState(false)
+    window.scrollTo(0,0)
     useEffect(() => {
     const elements = document.querySelectorAll('.element');
     const handleScroll = () => {

@@ -7,6 +7,7 @@ export default function Contact() {
     const textRef = useRef(null)
     const [isSnackOpen, setIsSnackOpen] = useState(false)
     const [message,setMessage] = useState('')
+    window.scrollTo(0,0)
 
     const copyToClipboard = (e) => {
         setMessage('panoya kopyanaldı.')
@@ -34,7 +35,7 @@ export default function Contact() {
                 <Mail /> Gmail : bilimsozlugu0@gmail.com
             </div>
             </CopyToClipboard>
-            <h2 className='my-2'>Sosyal medya hesaplarımız</h2>
+            <h2 className='mb-6'>Sosyal medya hesaplarımız</h2>
             <TableContainer component={Paper} sx={{
                 backgroundColor: 'transparent',
                 border: '1px solid #626262'
@@ -43,17 +44,20 @@ export default function Contact() {
                 <TableBody>
             {SOCIAL_MEDIA_ACCOUNDS.map((item,index) => {
                 return <TableRow key={index} className='border-b border-zinc-200'>
-                    
                     <TableCell sx={{padding:'4px', borderBottom: '2px solid #626262',color:'#f7f7f7',fontFamily:'Montserrat','@media (min-width: 600px)': {padding:'8px'}}}>
-                    <a href={item.URL}>
-                        {item.element}
-                    </a>
-                        <span className='ml-1 sm:ml-2 lg:ml-3 text-[0.8rem] sm:text-base font-semibold'>{item.platform}</span>
+                        <a href={item.URL}>
+                            {item.element}
+                        </a>
+                        <span className='ml-1 sm:ml-2 lg:ml-3 text-[0.8rem] sm:text-base font-semibold'>
+                            <a href={item.URL}>
+                                {item.platform}
+                            </a>
+                        </span>
                     </TableCell>
                     <TableCell sx={{padding:'4px',borderBottom: '2px solid #626262'}}>
-                        <a 
+                        <a
                             title='Adrese git'
-                            target="_blank" 
+                            target="_blank"
                             rel="noopener noreferrer"
                             href={item.URL}
                             >

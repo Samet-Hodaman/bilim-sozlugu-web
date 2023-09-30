@@ -3,14 +3,19 @@ import Logo from "./logo"
 import { LOGIN_LINK } from "../../../utils/consts/auth"
 import { useDispatch, useSelector } from "react-redux"
 import { logout } from "../../../store/auth"
+import { useEffect } from "react"
+import { Login } from "@mui/icons-material"
 
 export default function Header(){
-    const user = useSelector(state => state.auth)
+    const user = useSelector(state => state.auth.user)
+    useEffect(() => {
+        console.log(user);
+    })
     const dispatch = useDispatch()
 
     return <header className="h-auto bg-header">
     <div className="max-w-6xl mx-auto">
-        <div className="flex justify-between items-center gap-2">
+        <div className="flex justify-between items-center mx-5 gap-2">
             <div className=" rounded-full flex-row ">
                 <a href="/">
                     <Logo text="BİLİM SÖZLÜĞÜ"/>
@@ -28,7 +33,7 @@ export default function Header(){
             </a>
             :
             <a href={LOGIN_LINK.login.path}>
-                {LOGIN_LINK.login.title}
+                <Login />   Giriş yap
             </a> 
             }
             </div>

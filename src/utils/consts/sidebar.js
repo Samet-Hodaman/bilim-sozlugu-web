@@ -5,6 +5,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { Login } from '@mui/icons-material';
 const fontSize = 'small'
 
 export const SIDEBAR_MENU = [
@@ -42,7 +43,7 @@ export const SIDEBAR_MENU = [
     {
         path: '/auth/giris-yap',
         title: 'Giris yap',
-        element: <LogoutIcon fontSize={fontSize} />,
+        element: <Login fontSize={fontSize} />,
         isLogged: false
     },
 ]

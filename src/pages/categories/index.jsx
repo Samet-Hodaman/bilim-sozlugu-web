@@ -18,6 +18,7 @@ const emails = ['username@gmail.com', 'user02@gmail.com'];
 
 export function SimpleDialog(props) {
   const { onClose, selectedValue, open } = props;
+  window.scrollTo(0,0)
 
   const handleClose = () => {
     onClose(selectedValue);

@@ -25,17 +25,17 @@ export default function SuggestionRequest(){
                 className="flex rounded-lg indent-3 md:indent-5 placeholder-[#fdfdfd] overflow-hidden shadow-xl shadow-blue-600/30 resize-none min-h-[10rem] text-base md:text-lg p-3 m-4 bg-primary montserrat fifth"/>
             <div className="flex justify-between px-2">
                 <div>
-                {!isLogged ? <>
-                    <label for="name" className="text-white ">Kim: </label>
-                    <input name="name" id="name" type='name' className="rounded ml-1 " />
-                    <span className="ml-2 text-white ">
+                {!isLogged ? <div className="secondary">
+                    <label for="name">Kim: </label>
+                    <input name="name" id="name" type='name' className="rounded ml-1 bg-primary shadow-inner shadow-slate-500 " />
+                    <span className="ml-2 ">
                         ya da <NavLink className='underline underline-offset-2' to='/auth/giris-yap'>giriş yapın.</NavLink>
                     </span>
                     <div>
                         <input type="checkbox" id="private" name="private" value="Açık paylaş" title="açık paylaş" />
                         <label for="private" className="ml-2 ">Açık paylaş</label>
                     </div>
-                </>:
+                </div>:
                 <div className="flex flex-row gap-1 ml-4"><p>Gönderen:</p>{userInfo.name} {userInfo.surname}</div>
                 }
                     <div className="my-3">

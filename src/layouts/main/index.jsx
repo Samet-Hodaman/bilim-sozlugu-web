@@ -7,7 +7,7 @@ import { useSelector } from "react-redux"
 
 export default function MainLayout() {
     const navbar = useSelector(state => state.site.navbar)
-
+    
     return <div className="flex w-screen flex-col bg-gradient-to-r from-sky-100 to-lime-50 ">
     <Header />
     <section className="flex justify-center relative">

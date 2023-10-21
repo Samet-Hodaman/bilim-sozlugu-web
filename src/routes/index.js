@@ -20,7 +20,7 @@ export const routes = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Socials />
+                element: <Home />
             },
             {
                 path: '/kategoriler',

@@ -11,6 +11,7 @@ import Profile from "../pages/profile";
 import Login from "../layouts/auth/login";
 import Register from "../layouts/auth/register";
 import ForgotPassword from "../layouts/auth/forgotPassword";
+import Socials from "../pages/socials";
 
 export const routes = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ export const routes = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Home />
+                element: <Socials />
             },
             {
                 path: '/kategoriler',
@@ -60,5 +61,9 @@ export const routes = createBrowserRouter([
                 element: <Register link={LOGIN_LINK}/>
             }
         ]
+    },
+    {
+        path: 'sosyal-medya',
+        element: <Socials />
     }
 ])

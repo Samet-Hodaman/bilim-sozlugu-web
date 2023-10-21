@@ -4,7 +4,7 @@ import { LOGIN_LINK } from "../../../utils/consts/auth"
 import { useDispatch, useSelector } from "react-redux"
 import { logout } from "../../../store/auth"
 import { useEffect } from "react"
-import { Login } from "@mui/icons-material"
+import { Login, Logout } from "@mui/icons-material"
 
 export default function Header(){
     const user = useSelector(state => state.auth.user)
@@ -29,7 +29,7 @@ export default function Header(){
             <div>
             {user ? 
             <a href='/'>
-                <button onClick={() => dispatch(logout())}>Çıkış yap</button>
+                <button onClick={() => dispatch(logout())}>Çıkış yap <Logout /></button>
             </a>
             :
             <a href={LOGIN_LINK.login.path}>

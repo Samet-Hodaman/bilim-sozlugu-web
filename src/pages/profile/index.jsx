@@ -1,12 +1,21 @@
-import { MoreVert } from "@mui/icons-material";
-import { Avatar, Card, CardHeader, CardMedia, CircularProgress, IconButton, Skeleton } from "@mui/material";
+import { ExpandMore, MoreVert } from "@mui/icons-material";
+import { Accordion, AccordionDetails, AccordionSummary, Avatar, Card, CardHeader, CardMedia, CircularProgress, IconButton, Skeleton, Typography } from "@mui/material";
 import { useEffect, useState } from "react"
-import { useSelector } from "react-redux";
+import { useSelector } from "react-redux"
+import InputBox from '../../components/InputBox'
 
 export default function Profile() {
 	const [userInfo, setUserInfo] = useState({});
 	const [loading, setLoading] = useState(true)
 	const storedInfo = useSelector(state => state.auth.user)
+	const [expanded, setExpanded] = useState(false)
+	const [form, setForm] = useState({
+		name:'',
+		surname:'',
+		password:'',
+		confirmPassword:'',
+		email: ''
+})
 	
 	useEffect(() => {
 		setUserInfo(JSON.parse(storedInfo))
@@ -15,10 +24,14 @@ export default function Profile() {
 		}, 1500)
 	}, []);
 
+	const handleChange = (isExpanded, panel) => {
+		setExpanded(isExpanded ? panel : false)
+	}
+
 	return (
 		<main className="container">
 		<section className="flex flex-col items-center ">
-		<Card sx={{width:500}}>
+		<Card sx={{width:'100%'}}>
 			<CardHeader
 				avatar={
 					loading ? (
@@ -60,23 +73,130 @@ export default function Profile() {
 						<p>5 saat önce</p>
 					)
 				}
+			/>
+			<CardMedia sx={{backgroundColor: '#eee'}}>
+			<Accordion 
+				expanded={expanded === 'panel1'} 
+				onChange={(event, isExpanded) => handleChange(isExpanded,'panel1')}
+				>
+			<AccordionSummary 
+				id="panel1-header" 
+				aria-controls="panel1-content" 
+				expandIcon={<ExpandMore />}
 			>
-			</CardHeader>
+				<Typography>Bilgilerimi güncelle</Typography>
+			</AccordionSummary>
+			<AccordionDetails className="bg-gray-100 ">
+				<Typography className="max-w-3xl ">
+					<InputBox
+						title="İsim:" 
+						type="name"
+						name="name" 
+						value={form.name} 
+						handleChange={(e) => {setForm({...form,name:e.target.value}) 
+						console.log(e.target.value)}}
+					/>
+					<InputBox
+						title="Soyisim:" 
+						type="surname"
+						name="surname" 
+						value={form.surname} 
+						handleChange={(e) => {setForm({...form,surname:e.target.value}) 
+						console.log(e.target.value)}}
+					/>
+				</Typography>
+			</AccordionDetails>
+		</Accordion>
+
+		<Accordion expanded={expanded === 'panel2'} onChange={(event, isExpanded) => handleChange(isExpanded,'panel2')}>
+			<AccordionSummary 
+				id="panel2-header" 
+				aria-controls="panel2-content" 
+				expandIcon={<ExpandMore />}
+			>
+				<Typography>Şifre değiştir</Typography>
+			</AccordionSummary>
+			<AccordionDetails>
+				<Typography>
+				<InputBox
+						title="Eski şifre:" 
+						type="password"
+						name="prevPassword" 
+						value={form.password} 
+						handleChange={(e) => {setForm({...form,password:e.target.value}) 
+						console.log(e.target.value)}}
+					/>
+					<InputBox
+						title="Yeni şifre:" 
+						type="password"
+						name="newPassword" 
+						value={form.confirmPassword} 
+						handleChange={(e) => {setForm({...form,email:e.target.value}) 
+						console.log(e.target.value)}}
+					/>
+					<InputBox
+						title="Yeni şifre tekrar:" 
+						type="password"
+						name="newPasswordAgain" 
+						value={form.email} 
+						handleChange={(e) => {setForm({...form,email:e.target.value}) 
+						console.log(e.target.value)}}
+					/>				
+					</Typography>
+			</AccordionDetails>
+		</Accordion>
+
+		<Accordion 
+			expanded={expanded === 'panel3'} 
+			onChange={(event, isExpanded) => handleChange(isExpanded,'panel3')}	
+		>
+			<AccordionSummary 
+				id="panel3-header" 
+				aria-controls="panel3-content" 
+				expandIcon={<ExpandMore />}
+			>
+				<Typography>E-posta adresini güncelle</Typography>
+			</AccordionSummary>
+			<AccordionDetails className="bg-gray-100">
+					<InputBox
+						title="Email:" 
+						type="email"
+						name="email" 
+						value={form.email} 
+						handleChange={(e) => {setForm({...form,email:e.target.value}) 
+						console.log(e.target.value)}}
+					/>
+					Email: 
+					<input 
+						title="Email" 
+						type="email" 
+						name="email" 
+						value={form.email} 
+						onChange={(e) => {setForm({...form,email:e.target.value})
+						console.log(e.target.value)}} 
+					/>
+			</AccordionDetails>
+		</Accordion>
+
+		<Accordion expanded={expanded === 'panel4'} onChange={(event, isExpanded) => handleChange(isExpanded,'panel4')}>
+			<AccordionSummary 
+				id="panel4-header" 
+				aria-controls="panel4-content" 
+				expandIcon={<ExpandMore />}
+			>
+				<Typography>Çıkış yap</Typography>
+			</AccordionSummary>
+			<AccordionDetails>
+				<Typography>
+					Çıkış yapmak için tıkladınız emin misiniz
+				</Typography>
+			</AccordionDetails>
+		</Accordion>
+			</CardMedia>
 		</Card>
-			<Skeleton animation={false} variant="circular" width={40} height={40} />
-			<Skeleton variant="rectangular" width={210} height={60} />
-			<Skeleton variant="rounded" width={210} height={60} />
-			<Skeleton variant="text" sx={{ fontSize: '1rem' ,width: '100%'}} />
 		</section>
-		<div>   
-			Bilim Sözlüğü Ailesi olarak, sizinle iletişim kurma fırsatını değerli buluyor ve iletilerinizle özenle ilgileniyoruz.
-			Sorularınızı ve merak ettiklerinizi bizimle paylaşmanız için buradayız. İster bilimsel bir merakınız olsun, isterse herhangi bir konuda danışmanlık arayışınız, biz size yardımcı olmaktan mutluluk duyarız.
-			Geri bildirimleriniz bizim için çok önemli. Web sitemizi daha iyi hale getirmek ve içeriklerimizi daha da iyileştirmek için sizden gelen geri bildirimlere her zaman açığız.                
-		</div>
-		<div className="flex">
-			Profil {userInfo.name}
-		</div>
-		<h2>bilgilerimi guncelle/sifre degistir/E-posta adresini guncelle/cikis yap</h2>
-		</main>
+		
+		
+	</main>
 	);
 }

@@ -3,13 +3,12 @@ import { SIDEBAR_MENU } from "../../../utils/consts/sidebar"
 import classNames from 'classnames'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import DehazeRoundedIcon from '@mui/icons-material/DehazeRounded';
-import CloseIcon from '@mui/icons-material/Close';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useDispatch, useSelector } from "react-redux";
 import { setNavbar } from "../../../store/site";
 import { login,logout} from "../../../store/auth";
 import { useEffect, useState } from "react";
-import { Box, Divider, Drawer, IconButton, AlertProps, List, ListItem, ListItemIcon, ListItemText, Snackbar, Typography, Alert } from "@mui/material";
+import { Box, Drawer, List, ListItem, ListItemIcon, ListItemText, Snackbar, Typography, Alert } from "@mui/material";
 
 export default function SideBar() {
     const dispatch = useDispatch()
@@ -155,57 +154,4 @@ export default function SideBar() {
     </Snackbar>
     
     </aside>
-
-
-
-/*
-NAVBAR ///////////////////////////////////
-        {navbar && 
-        <nav className="grid gap-y-2 ml-1.5 sm:ml-2 mt-3">
-        {SIDEBAR_MENU.map((menu,key) => {
-            if (menu.isLogged === isLogged || menu.isLogged === undefined) 
-                return(
-                <NavLink 
-                    to={menu.path}
-                    key={key}
-                    className='flex shadow-md gap-x-1 tracking-wider bg-zinc-100 px-1.5 py-0.5 text-xs sm:px-3 sm:py-1 rounded-lg max-w-[15rem] text-lg hover:bg-zinc-50 hover:shadow-sky-200/10 '
-                >
-                    <div className="text-sky-500 " >
-                        {menu.element}
-                    </div>
-                    {menu.title}
-                </NavLink>
-            )
-        })}
-        {isLogged &&<>
-            <hr />
-            <button className="text-left flex gap-x-1 tracking-wider bg-zinc-100 px-1.5 py-0.5 text-xs sm:px-3 sm:py-1 rounded-lg max-w-[15rem] text-lg hover:bg-white" onClick={() => dispatch(logout())}>
-                <div className="text-sky-500 " >
-                <LogoutIcon fontSize='small' />
-                </div>
-                Çıkış yap
-            </button>
-        </> }
-        </nav>}
-////////////////////////////////////////////
-
-
-
-*/}
-
-
-
-
-
-
-
-        {/* ******************************* 
-        <div className="text-sm md:text-base">
-        {isLogged ? 
-                <button onClick={() => dispatch(logout())}>Burasi cikis yap</button>
-        :
-                <button onClick={() => dispatch(login(JSON.stringify(person)))}>Burasi giris yap</button>
-        }
-        </div>
-         ******************************* */}
-        {/* This part will be deleted soon */}
+}

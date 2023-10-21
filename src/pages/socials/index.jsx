@@ -11,7 +11,7 @@ export default function Socials(){
                 <Logo />
                 <div>
                     <h1 className="primary font-bold roboto text-3xl">Bilim Sözlüğü</h1>
-                    <h5 className="text-sm font-semibold indent-0.5 italic text-cyan-700">Bilimin izinde daima ileriye...</h5>
+                    <h5 className="text-sm font-semibold indent-0.5 italic text-cyan-700">Bilimin izinde, hep birlikte daima ileriye...</h5>
                 </div>
             </div>
             <div className="relative flex flex-col justify-center">
@@ -22,31 +22,25 @@ export default function Socials(){
             {SOCIAL_MEDIA_ACCOUNDS.map((item,index) => {
                 return(
                 <a href={item.URL} className="bg-white p-0 rounded" key={index}>
-                    <div className={"flex w-[33rem] rounded cursor-pointer opacity-100 hover:opacity-80 transition " + item.containerClass}>
-                        <div className="m-2 ">
+                    <div className={"flex justify-between items-center w-[33rem] p-2 rounded cursor-pointer opacity-100 hover:opacity-80 transition " + item.containerClass}>
+                        <div>
                             {item.element}
                         </div>
-                        <div className="m-2 font-semibold text-white !opacity-100">
+                        <div className="font-semibold text-[#eee] text-2xl !opacity-100">
                             {item.platform}
+                        </div>
+                        <div>
+
                         </div>
                     </div>
                 </a>
                 )
             })}
         </section>
-        <section className="flex bg-slate-800 rounded-b-xl text-[#ddd] p-2">
-            <div>
-                <h3>Bilim Sözlüğü</h3>
-                <Divider orientation="vertical" variant="middle" flexItem />
-            </div>
-            <div>
-                <h3>Tüm hakları saklıdır.</h3>
-                <Divider orientation="vertical" variant="middle" flexItem />
-            </div>
-            <div>
-                <h3>Bize ulaşın <Mail /> Gmail : bilimsozlugu0@gmail.com</h3>
-                <Divider orientation="vertical" variant="middle" flexItem />
-            </div>
+        <section className="flex text-sm flex-col items-center w-full bg-slate-800 gap-3 rounded-b-xl text-[#ddd] p-6">
+            <h3 className="indent-4">Bilim Sözlüğü platformu kar amacı gütmeyen bir gönüllü öğrenci topluğudur ve tüm hakları saklıdır.</h3>
+            <Divider flexItem/>
+            <h3>Bize ulaşın: <Mail /> Gmail : bilimsozlugu0@gmail.com</h3>
         </section>
     </main>
     )

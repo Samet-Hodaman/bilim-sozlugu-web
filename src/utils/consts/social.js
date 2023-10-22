@@ -63,7 +63,7 @@ export const SOCIAL_MEDIA_ACCOUNDS = [
     },
     {
         name: "Bilim Sözlüğü",
-        URL: "https://bilim-sozlugu-web.vercel.app/",
+        URL: "https://bilim-sozlugu.vercel.app/",
         platform: "Web",
         element: <Language className="text-white rounded-xl"/>,
         containerClass: "bg-gradient-to-r from-[#2DA2E1] to-[#18ACB6]"

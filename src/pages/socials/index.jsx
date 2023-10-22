@@ -4,8 +4,9 @@ import { SOCIAL_MEDIA_ACCOUNDS } from "../../utils/consts/social";
 import { Divider } from "@mui/material";
 
 export default function Socials(){
+    
     return(
-    <main className="flex flex-col justify-center items-center w-[35rem] mx-auto">
+    <main className="flex flex-col justify-center items-center w-full max-w-[35rem] mx-auto">
         <section className="bg-slate-300 w-full rounded-t-xl shadow-xl">
             <div className="flex items-center montserrat justify-start pl-5 ">
                 <Logo />
@@ -18,11 +19,11 @@ export default function Socials(){
                 <h2 className="text-2xl text-center my-2 italic font-semibold text-orange-600">Sosyal Medya Hesaplarımız</h2>
             </div>
         </section>
-        <section className="flex flex-col gap-3 bg-secondary p-4 py-8 shadow">
+        <section className="flex flex-col w-full gap-3 bg-secondary p-4 py-8 shadow">
             {SOCIAL_MEDIA_ACCOUNDS.map((item,index) => {
                 return(
                 <a href={item.URL} className="bg-white p-0 rounded" key={index}>
-                    <div className={"flex justify-between items-center w-[33rem] p-2 rounded cursor-pointer opacity-100 hover:opacity-80 transition " + item.containerClass}>
+                    <div className={"flex justify-between items-center p-2 rounded cursor-pointer opacity-100 hover:opacity-80 transition " + item.containerClass}>
                         <div>
                             {item.element}
                         </div>

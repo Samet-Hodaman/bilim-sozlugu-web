@@ -11,23 +11,23 @@ export default function Socials(){
             <div className="flex items-center montserrat justify-start pl-5 ">
                 <Logo />
                 <div>
-                    <h1 className="primary font-bold roboto text-3xl">Bilim Sözlüğü</h1>
-                    <h5 className="text-sm font-semibold indent-0.5 italic text-cyan-700">Bilimin izinde, hep birlikte daima ileriye...</h5>
+                    <h1 className="primary font-bold roboto text-2xl md:text-3xl">Bilim Sözlüğü</h1>
+                    <h5 className="text-[0.6rem] md:text-lg font-semibold md:indent-0.5 italic text-cyan-700">Bilimin izinde, hep birlikte daima ileriye...</h5>
                 </div>
             </div>
             <div className="relative flex flex-col justify-center">
-                <h2 className="text-2xl text-center my-2 italic font-semibold text-orange-600">Sosyal Medya Hesaplarımız</h2>
+                <h2 className="text-xl md:text-2xl text-center my-2 italic font-semibold text-orange-600">Sosyal Medya Hesaplarımız</h2>
             </div>
         </section>
-        <section className="flex flex-col w-full gap-3 bg-secondary p-4 py-8 shadow">
+        <section className="flex flex-col w-full gap-2 md:gap-3 bg-secondary p-4 py-8 shadow">
             {SOCIAL_MEDIA_ACCOUNDS.map((item,index) => {
                 return(
                 <a href={item.URL} className="bg-white p-0 rounded" key={index}>
-                    <div className={"flex justify-between items-center p-2 rounded cursor-pointer opacity-100 hover:opacity-80 transition " + item.containerClass}>
+                    <div className={"flex justify-between items-center p-1.5 md:p-2 rounded cursor-pointer opacity-100 hover:opacity-80 transition " + item.containerClass}>
                         <div>
                             {item.element}
                         </div>
-                        <div className="font-semibold text-[#eee] text-2xl !opacity-100">
+                        <div className="font-semibold text-[#eee] text-xl md:text-2xl !opacity-100">
                             {item.platform}
                         </div>
                         <div>

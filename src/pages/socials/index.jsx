@@ -7,7 +7,7 @@ export default function Socials(){
     
     return(
     <main className="flex flex-col justify-center items-center w-full max-w-[35rem] mx-auto">
-        <section className="bg-slate-300 w-full rounded-t-xl shadow-xl">
+        <section className="bg-secondary w-full rounded-t-xl shadow-xl">
             <div className="flex items-center montserrat justify-start pl-5 ">
                 <Logo />
                 <div>
@@ -16,10 +16,10 @@ export default function Socials(){
                 </div>
             </div>
             <div className="relative flex flex-col justify-center">
-                <h2 className="text-xl md:text-2xl text-center my-2 italic font-semibold text-orange-600">Sosyal Medya Hesaplarımız</h2>
+                <h2 className="text-lg md:text-2xl text-center my-2 italic font-bold text-yellow-400">Sosyal Medya Hesaplarımız</h2>
             </div>
         </section>
-        <section className="flex flex-col w-full gap-2 md:gap-3 bg-secondary p-4 py-8 shadow">
+        <section className="flex flex-col w-full gap-2 md:gap-3 bg-slate-200 p-4 py-6 shadow">
             {SOCIAL_MEDIA_ACCOUNDS.map((item,index) => {
                 return(
                 <a href={item.URL} className="bg-white p-0 rounded" key={index}>
@@ -27,7 +27,7 @@ export default function Socials(){
                         <div>
                             {item.element}
                         </div>
-                        <div className="font-semibold text-[#eee] text-xl md:text-2xl !opacity-100">
+                        <div className="w-32 text-left font-semibold text-[#eee] text-xl md:text-2xl !opacity-100">
                             {item.platform}
                         </div>
                         <div>

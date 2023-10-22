@@ -1,48 +1,35 @@
-import { Mail } from "@mui/icons-material";
 import Logo from "../../layouts/main/header/logo";
 import { SOCIAL_MEDIA_ACCOUNDS } from "../../utils/consts/social";
-import { Divider } from "@mui/material";
 
 export default function Socials(){
-    
     return(
-    <main className="flex flex-col justify-center items-center w-full max-w-[35rem] mx-auto">
-        <section className="bg-secondary w-full rounded-t-xl shadow-xl">
-            <div className="flex items-center montserrat justify-start pl-5 ">
-                <Logo />
-                <div>
-                    <h1 className="primary font-bold roboto text-2xl md:text-3xl">Bilim Sözlüğü</h1>
-                    <h5 className="text-[0.6rem] md:text-lg font-semibold md:indent-0.5 italic text-cyan-700">Bilimin izinde, hep birlikte daima ileriye...</h5>
+        <main className="flex flex-col items-center bg-[#fff] w-full max-w-[35rem] mx-auto rounded-b-xl">
+            <section>
+                <div className="flex flex-col items-center">
+                    <Logo />
+                    <h1 className="text-xl font-extrabold primary">Bilim Sözlüğü</h1>
+                    <h3 className="primary font-semibold">Bilimin izinde, hep birlikte daima ileriye</h3>
                 </div>
-            </div>
-            <div className="relative flex flex-col justify-center">
-                <h2 className="text-lg md:text-2xl text-center my-2 italic font-bold text-yellow-400">Sosyal Medya Hesaplarımız</h2>
-            </div>
-        </section>
-        <section className="flex flex-col w-full gap-2 md:gap-3 bg-slate-200 p-4 py-6 shadow">
+            </section>
+            <section className="flex flex-col gap-2 md:gap-3 m-5 w-full">
             {SOCIAL_MEDIA_ACCOUNDS.map((item,index) => {
                 return(
-                <a href={item.URL} className="bg-white p-0 rounded" key={index}>
-                    <div className={"flex justify-between items-center p-1.5 md:p-2 rounded cursor-pointer opacity-100 hover:opacity-80 transition " + item.containerClass}>
-                        <div>
-                            {item.element}
-                        </div>
-                        <div className="w-32 text-left font-semibold text-[#eee] text-xl md:text-2xl !opacity-100">
+                <a href={item.URL} className="mx-4 rounded-full">
+                    <div className="flex justify-between items-center w-full p-2 px-4 bg-primary rounded-full">
+                        {item.element}
+                        <h3 className="text-lg text-white font-semibold">
                             {item.platform}
-                        </div>
-                        <div>
-
-                        </div>
+                        </h3>
+                        <div className="text-xl text-white "></div>
                     </div>
                 </a>
+
                 )
             })}
-        </section>
-        <section className="flex text-sm flex-col items-center w-full bg-slate-800 gap-3 rounded-b-xl text-[#ddd] p-6">
-            <h3 className="indent-4">Bilim Sözlüğü platformu kar amacı gütmeyen bir gönüllü öğrenci topluğudur ve tüm hakları saklıdır.</h3>
-            <Divider flexItem/>
-            <h3>Bize ulaşın: <Mail /> Gmail : bilimsozlugu0@gmail.com</h3>
-        </section>
-    </main>
+            <h1 className="text-lg primary font-semibold text-center px-6 mt-2">
+                Tüm sosyal medya hesaplarımıza yukarıdaki bağlantılardan ulaşabilirsiniz
+            </h1>
+            </section>
+        </main>
     )
 }

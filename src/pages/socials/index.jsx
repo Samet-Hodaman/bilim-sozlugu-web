@@ -17,10 +17,12 @@ export default function Socials(){
                 <a href={item.URL} className="mx-4 rounded-full">
                     <div className="flex justify-between items-center w-full p-2 px-4 bg-primary rounded-full">
                         {item.element}
-                        <h3 className="text-lg text-white font-semibold">
-                            {item.platform}
+                        <h3 className="text-md md:text-lg text-white font-semibold">
+                            <div>
+                                {item.platform}
+                            </div>
                         </h3>
-                        <div className="text-xl text-white "></div>
+                        <div></div>
                     </div>
                 </a>
 
